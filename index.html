@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gary｜半導體工程師</title>
+  <meta name="description" content="Gary 的個人自傳網頁：半導體工程師，專注製程、良率與元件分析。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo" aria-label="回到頂端">G</a>
+    <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="menu" class="menu">
+      <a href="#about" class="nav-link">關於我</a>
+      <a href="#skills" class="nav-link">專業技能</a>
+      <a href="#experience" class="nav-link">經歷</a>
+      <a href="#projects" class="nav-link">專案</a>
+      <a href="#contact" class="nav-link">聯絡</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero：深色 -->
+  <section class="hero-band-dark">
+    <div class="container hero-inner">
+      <div>
+        <p class="label-uppercase on-dark-soft">Semiconductor Engineer</p>
+        <h1>Gary</h1>
+        <p class="hero-lead">我是一名半導體工程師，在奈米尺度的世界裡，追求每一片晶圓的精準與良率。</p>
+        <div class="btn-row">
+          <a href="#contact" class="btn btn-primary">聯絡我</a>
+          <a href="#projects" class="btn btn-secondary-dark">查看專案</a>
+        </div>
+      </div>
+      <div class="wafer" aria-hidden="true">
+        <canvas id="waferCanvas" width="480" height="480"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- 數字 -->
+  <section class="specs">
+    <div class="container spec-grid">
+      <div class="spec-cell"><span class="spec-value" data-count="5" data-suffix="+">0</span><span class="label-uppercase">年產業經驗</span></div>
+      <div class="spec-cell"><span class="spec-value" data-count="12" data-suffix="+">0</span><span class="label-uppercase">製程專案</span></div>
+      <div class="spec-cell"><span class="spec-value" data-count="3" data-suffix="%">0</span><span class="label-uppercase">平均良率提升</span></div>
+      <div class="spec-cell"><span class="spec-value" data-count="7" data-suffix="nm">0</span><span class="label-uppercase">先進製程接觸</span></div>
+    </div>
+  </section>
+
+  <!-- 關於我 -->
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div>
+        <p class="label-uppercase muted">About</p>
+        <h2>關於我</h2>
+      </div>
+      <div class="about-text">
+        <p class="lead">嗨，我是 Gary。我的工作是讓晶片從設計圖變成穩定、可量產的產品。</p>
+        <p>我熱衷於從數據中找出製程的細微差異，透過實驗設計與統計分析，縮短問題定位的時間。相信好的工程師不只解決問題，更要把解法變成可重複使用的流程。</p>
+        <p>工作之外，我喜歡閱讀新的半導體技術趨勢，也樂於和跨部門夥伴溝通協作。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section id="skills" class="section surface-soft">
+    <div class="container">
+      <p class="label-uppercase muted">Skills</p>
+      <h2>專業技能</h2>
+      <div class="chips" role="tablist" aria-label="技能分類">
+        <button class="chip active" data-filter="all">全部</button>
+        <button class="chip" data-filter="process">製程</button>
+        <button class="chip" data-filter="analysis">分析</button>
+        <button class="chip" data-filter="tools">工具</button>
+      </div>
+      <div class="card-grid" id="skillGrid">
+        <article class="card" data-cat="process">
+          <h3>微影與蝕刻</h3>
+          <p>熟悉光阻塗佈、曝光、顯影及乾/濕式蝕刻的製程窗口與關鍵尺寸控制。</p>
+          <div class="bar"><span style="--w:85%"></span></div>
+        </article>
+        <article class="card" data-cat="process">
+          <h3>薄膜沉積</h3>
+          <p>CVD、PVD、ALD 等薄膜製程的厚度均勻性與應力調校。</p>
+          <div class="bar"><span style="--w:75%"></span></div>
+        </article>
+        <article class="card" data-cat="analysis">
+          <h3>良率分析</h3>
+          <p>Wafer Map 分析、缺陷分類與根因分析，縮短異常處理時間。</p>
+          <div class="bar"><span style="--w:90%"></span></div>
+        </article>
+        <article class="card" data-cat="analysis">
+          <h3>元件特性量測</h3>
+          <p>I-V / C-V 量測、可靠度測試與失效分析（FA）。</p>
+          <div class="bar"><span style="--w:80%"></span></div>
+        </article>
+        <article class="card" data-cat="tools">
+          <h3>Python 與資料分析</h3>
+          <p>使用 Python、pandas 自動化資料整理與製程趨勢視覺化。</p>
+          <div class="bar"><span style="--w:80%"></span></div>
+        </article>
+        <article class="card" data-cat="tools">
+          <h3>SPC 與 DOE</h3>
+          <p>以統計製程管制與實驗設計，持續優化製程穩定度。</p>
+          <div class="bar"><span style="--w:85%"></span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 經歷 -->
+  <section id="experience" class="section">
+    <div class="container">
+      <p class="label-uppercase muted">Experience</p>
+      <h2>經歷</h2>
+      <ol class="timeline">
+        <li>
+          <span class="time label-uppercase">2022 — 現在</span>
+          <div>
+            <h3>製程工程師</h3>
+            <p>負責產線關鍵製程的監控與優化，主導異常分析並建立標準處理流程。</p>
+          </div>
+        </li>
+        <li>
+          <span class="time label-uppercase">2020 — 2022</span>
+          <div>
+            <h3>製程整合助理工程師</h3>
+            <p>參與新製程導入與驗證，協助完成實驗設計與數據彙整。</p>
+          </div>
+        </li>
+        <li>
+          <span class="time label-uppercase">學歷</span>
+          <div>
+            <h3>電子 / 材料相關碩士</h3>
+            <p>研究方向為半導體元件與薄膜材料特性。（請依實際學歷修改）</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 專案 -->
+  <section id="projects" class="section surface-soft">
+    <div class="container">
+      <p class="label-uppercase muted">Projects</p>
+      <h2>代表專案</h2>
+      <div class="card-grid four">
+        <article class="model-card">
+          <div class="model-photo"><span>01</span></div>
+          <h3>蝕刻均勻性改善</h3>
+          <p>調整腔體參數，降低晶圓邊緣與中心的關鍵尺寸差異。</p>
+          <a href="#contact" class="text-link-up">了解更多 ›</a>
+        </article>
+        <article class="model-card">
+          <div class="model-photo"><span>02</span></div>
+          <h3>缺陷自動分類</h3>
+          <p>以 Python 建立缺陷影像分類流程，減少人工複判時間。</p>
+          <a href="#contact" class="text-link-up">了解更多 ›</a>
+        </article>
+        <article class="model-card">
+          <div class="model-photo"><span>03</span></div>
+          <h3>良率異常根因分析</h3>
+          <p>整合機台與量測資料，快速定位影響良率的關鍵站點。</p>
+          <a href="#contact" class="text-link-up">了解更多 ›</a>
+        </article>
+        <article class="model-card">
+          <div class="model-photo"><span>04</span></div>
+          <h3>可靠度驗證</h3>
+          <p>規劃高溫偏壓測試，驗證新製程在長期使用下的穩定性。</p>
+          <a href="#contact" class="text-link-up">了解更多 ›</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聯絡：深色 -->
+  <section id="contact" class="cta-band">
+    <div class="container contact-grid">
+      <div>
+        <p class="label-uppercase on-dark-soft">Contact</p>
+        <h2>一起討論下一個晶片專案</h2>
+        <p class="on-dark-soft">留下訊息，我會盡快回覆你。</p>
+      </div>
+      <form id="contactForm" novalidate>
+        <label>姓名
+          <input type="text" name="name" required>
+          <small class="error" data-for="name"></small>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+          <small class="error" data-for="email"></small>
+        </label>
+        <label>訊息
+          <textarea name="message" rows="4" required></textarea>
+          <small class="error" data-for="message"></small>
+        </label>
+        <button type="submit" class="btn btn-primary">送出訊息</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Gary. 半導體工程師。</p>
+    <a href="#top" class="text-link-up">回到頂端 ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
